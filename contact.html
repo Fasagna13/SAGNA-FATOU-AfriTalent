@@ -3,7 +3,7 @@
 <head> 
 <meta charset="UTF-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>AfriTalent — Accueil</title> 
+<title>AfriTalent — contact</title> 
 <!-- Bootstrap 5 via CDN : feuille de style --> 
 <link 
 href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
@@ -13,11 +13,243 @@ rel="stylesheet">
 </head>
 <body> 
 <!-- Le contenu de la page sera ajoute ici --> 
-<!-- Bootstrap 5 via CDN : script JavaScript --> 
-<script 
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-></script> 
-<!-- Votre script JavaScript --> 
-<script src="js/main.js"></script>
+ <nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid">
+    <img src="IMAGE/LOGO.png" width="80px ">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">index</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="freelances.html">freelances</a>
+        </li><li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="about.html">about</a>
+        </li><li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="tarif.html">Tarif</a>
+        </li><li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Blog.html">Blog</a>
+        </li><li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> -->
+        <button class="btn btn-outline-success" type="submit">Rejoindre AfriTalent</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<section>
+   <!-- <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Prenom</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword4">Nom</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-group col-md-3">
+    <label for="inputAddress">Email</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group col-md-3">
+    <label for="inputAddress2">Address </label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row col-md-3">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button> -->
+  <div class="container mt-5">
+
+    <h1 class="text-center mb-4">Contactez-nous</h1>
+
+    <div class="row">
+
+        <!-- FORMULAIRE (gauche) -->
+        <div class="col-md-6">
+            <h3>Envoyer un message</h3>
+
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nom</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Prénom</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Sujet</label>
+                    <select class="form-select">
+                        <option>-- Choisir un sujet --</option>
+                        <option>Demande</option>
+                        <option>Support</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="5"></textarea>
+                </div>
+
+                <button class="btn btn-primary w-100">Envoyer</button>
+            </form>
+        </div>
+
+        <!-- INFOS + CARTE (droite) -->
+        <div class="col-md-6">
+            <h3>Nos coordonnées</h3>
+            <p>📧 Email : contact@afritalent.com</p>
+            <p>📞 Téléphone : +221 77 000 00 00</p>
+            <p>📍 Adresse : Dakar, Sénégal</p>
+
+            <h4 class="mt-4">Notre localisation</h4>
+            <iframe 
+                src="https://maps.google.com/maps?q=dakar&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%" 
+                height="250"
+                style="border:0;">
+            </iframe>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+
+<section>
+
+<footer class="bg-dark text-light pt-4">
+
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Colonne 1 -->
+
+      <div class="col-md-3">
+        <img src="IMAGE/LOGO.png" width="50">
+
+        <h5>AfriTalent</h5>
+
+        <p>Plateforme de formation et d'opportunités pour les jeunes talents africains.</p>
+
+      </div>
+
+      <!-- Colonne 2 -->
+
+      <div class="col-md-3">
+
+        <h5>Liens utiles</h5>
+
+        <ul class="list-unstyled">
+
+          <li><a href="#" class="text-light">Accueil</a></li>
+
+          <li><a href="#" class="text-light">Services</a></li>
+
+          <li><a href="#" class="text-light">Contact</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- Colonne 3 -->
+
+      <div class="col-md-3">
+
+        <h5>Ressources</h5>
+
+        <ul class="list-unstyled">
+
+          <li><a href="#" class="text-light">Blog</a></li>
+
+          <li><a href="#" class="text-light">Tutoriels</a></li>
+
+          <li><a href="#" class="text-light">FAQ</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- Colonne 4 -->
+
+      <div class="col-md-3">
+
+        <h5>Contact</h5>
+
+        <p>Email: contact@afritalent.com</p>
+
+        <!-- Réseaux sociaux -->
+
+       <a href="https://www.facebook.com" targret="blank">
+                 <img src="IMAGE/facebook.jpg" width="30"> 
+            </a>
+        <a href="https://www.bi-twitter.com" targret="blank">
+                 <img src="IMAGE/twiter.jpg" width="30"> 
+            </a>
+        
+
+        <a href="https://www.bi-instagram.com" targret="blank">
+                 <img src="IMAGE/instagramme.jpg" width="30"> 
+            </a>
+
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+
+    <div class="text-center mt-3 pb-3">
+
+      <p>&copy; <span id="year"></span> AfriTalent. Tous droits réservés.</p>
+
+    </div>
+
+  </div>
+
+</footer>
+</section>
 </body>
 </html>
