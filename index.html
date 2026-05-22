@@ -14,14 +14,14 @@ rel="stylesheet">
 </head>
 <body> 
 <!-- Le contenu de la page sera ajoute ici --> 
-<nav class="navbar navbar-expand-lg bg-primary">
+<nav class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
     <img src="IMAGE/LOGO.png" width="80px ">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.html">index</a>
         </li>
@@ -53,110 +53,158 @@ rel="stylesheet">
     <a href="#"><i class="fab fa-instagram"></i></a>
   </div>
   <section id="hero">
-    <div>
-       <h1>Trouvez votre développeur</h1>
-       <p>Connectez-vous avec des experts pour réaliser vos projets web.</p>
-    </div>
-    <div>
+    <div class="hero">
+        <img src="IMAGE/AfriTalent.png" >
+        <div class="hero-content">
+        <h1>Trouvez votre développeur</h1>
+        <p>Connectez-vous avec des experts pour réaliser vos projets web.</p>
+        <div class=" hero-buttons">
       <button type="button" class="btn btn-primary">je suis Freelance</button>
       <button type="button" class="btn btn-primary">Je cherche un Freelance </button>
+     </div>
     </div>
-    <div>
+  </div>
+  <div id="stats-section" class="row text-center mt-5 g-4">
+          <div class="col-md-4">
+            <span class="display-6 fw-bold counter" data-target="2500">+2500</span>
+            <p>Freelances</p>
+          </div>
 
-    </div>
+          <div class="col-md-4">
+            <span class="display-6 fw-bold counter" data-target="2500">+800</span>
+            <p>Pays représentes</p>
+          </div>
+      
+          <div class="col-md-4">
+            <span class="display-6 fw-bold counter" data-target="2500">+12 000</span>
+            <p>Projet realisées</p>
+          </div>
+    
   </section>
-  <section id=" COMMENT_ÇA_MARCHE">
-   <div class="container py-5"> 
+    
+   <!-- <div class="container py-5"> 
       <h2 class="text-center">AfriTalent en chiffres</h2> 
       <div class="row gx-4"> 
       <div class="col-md-4 card p-3"><p>1 800+ Freelances</p></div> 
       <div class="col-md-4 card p-3"><p>53 Pays representes</p></div> 
       <div class="col-md-4 card p-3"><p>5 800+ Projets realises</p></div> 
-   </div>
-
-   </section>
-  <section>
-    <div class="container text-center ">
-      <div class="row">
-        <div class="col card style= width: 18rem;">
-          <h5>choissisez votre PLan <img src="IMAGE/icone haut.jpg" width="25"></h5>
-          Sélectionnez l'abonnement qui correspond le mieux à vos besoins et à votre budget
-      </div>
-      <div class="col  card style= width: 10rem;">
-        <h5>PERSONALISEZ <img src="IMAGE/icone para.jpg" width="25"></h5>
-        adapté les options selon vos préférences
-      </div>
-      <div class=" col md-3 card style= width: 15rem;">
-        <h5>LANCEZ-VOUS! <img src="IMAGE/icone.jpg" width="25"></h5> 
-        commoncez à profiter du service immédiatement.c'est simple et rapide.
-    </div>
-    </div>
-
-      <!-- <div class="col card style= width: 12rem;">
-        2 of 3
-    </div>   -->
-     
-  </div>
-</div>
+   </div> -->
     
-    
-   </section> 
-   <section class="container my-5">
-    <H1  class="text-center mb-4">Nos services</H1>
-      <h2  class="text-center mb-4"> Catégorie de services</h2>
-      <h5  class="text-center mb-4">Découvrez nos domaines d'éxpertise.Chaque Catégorie <br>représente nos comppétences clés pour <br>accompagner vos projets.</h5>
-        <div class="row g-4">
-           <!-- carte 1 -->
-          <div class="col-md-4 col-lg-3">
-            <div class="card text-center p-3 servic-card">
-              <!-- <i class="bi bi-code-slash fs-1"></i> -->
-               <img src="IMAGE/S1.jpg" width="50">
-              <h5 class="mt-3">Développement web</h5>
-              <p>120+ <br>Sites Web modernes et performants.</p>
+ 
+  <section id="how-it-works" class="py-5" aria-labelledby="how-title">
+      <div class="container text-center">
+        <h2 id="how-title" class="fw-bold">Comment ça marche ?</h2>
+        <p class="text-muted">En 4 étapes simples, trouvez le freelance idéal ou démarrez votre carrière.</p>
+
+        <div class="row g-4 mt-4">
+          <div class="col-md-3">
+            <div class="card h-100 shadow-sm ">
+              <div class="card-body">
+                <span class="text-primary fw-bold">01</span>
+                <h5>Créez votre compte</h5>
+                <p>Inscrivez-vous gratuitement en quelques minutes.</p>
+              </div>
             </div>
           </div>
-       <!-- carte2 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card text-center p-3 servic-card">
-              <img src="IMAGE/S6.jpg" width="50">
-              <h5 class="mt-3">Dsigne UI/UX</h5>
-              <p>80+ <br>Interfaces intuitives et <br>expériences unique.</p>
+
+          <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <span class="text-primary fw-bold">02</span>
+                <h5>Complétez votre profil</h5>
+                <p>Mettez en valeur vos compétences et portfolio.</p>
+              </div>
             </div>
           </div>
-          <div class="col-md-4 col-lg-3">
-            <div class="card text-center p-3 servic-card">
-              <img src="IMAGE/S5.jpg" width="50">
-              <h5 class="mt-3">Marketing Digital</h5>
-              <p>90+ <br>Stratégies digital pour booster votre activité.</p>
+
+          <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <span class="text-primary fw-bold">03</span>
+                <h5>Trouvez la mission</h5>
+                <p>Parcourez les offres disponibles.</p>
+              </div>
             </div>
           </div>
-          <div class="col-md-4 col-lg-3">
-            <div class="card text-center p-3 servic-card">
-         <img src="IMAGE/S2.jpg" width="50">
-              <h5 class="mt-3">Data & IA</h5>
-              <p>60+ <br>Solutions intelligentes <br>basées sur vos données.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-3">
-            <div class="card text-center p-3 servic-card">
-             <img src="IMAGE/S3.jpg" width="50">
-              <h5 class="mt-3">Rédaction Tech</h5>
-              <p>70+ <br>Contenus techniques clairs et optimisés.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-3">
-            <div class="card text-center p-3 servic-card">
-              <img src="IMAGE/S4.jpg" width="50">
-              <h5 class="mt-3">DevOps & Cloud</h5>
-              <p>50+ <br>Déploiement,automatisation <br>et gestion Cloud.</p>
+
+          <div class="col-md-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <span class="text-primary fw-bold">04</span>
+                <h5>Collaborez</h5>
+                <p>Travaillez et soyez payé en sécurité.</p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+ 
+    
+   </section  id="how-it-works" class="py-5" aria-labelledby="how-title"> 
+    <div class="container text-center">
+        <h2 id="how-title" class="fw-bold">Nos Services</h2>
+        <h3>Catégorie de services</h3>
+        <p class="text-muted">Découvrez nos domaines d'éxpertise.Chaque Catégorie <br>représente nos comppétences clés pour <br>accompagner vos projets.</p>
 
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                  <img src="IMAGE/S1.jpg" width="50">
+                <h5>Développement web</h5>
+                <p>120+ <br>Sites Web modernes et performants.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <img src="IMAGE/S6.jpg" width="50">
+                <h5>Dsigne UI/UX</h5>
+                <p>Dsigne UI/UX</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+               <img src="IMAGE/S5.jpg" width="50">
+                <h5>Marketing Digital</h5>
+                <p>90+ <br>Stratégies digital pour booster votre activité.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <img src="IMAGE/S2.jpg" width="50">
+                <h5>Data & IA</h5>
+                <p>60+ <br>Solutions intelligentes <br>basées sur vos données.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <img src="IMAGE/S3.jpg" width="50">
+                <h5>Rédaction Tech</h5>
+                <p>70+ <br>Contenus techniques clairs et optimisés.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+               <img src="IMAGE/S4.jpg" width="50">
+                <h5>DevOps & Cloud</h5>
+                <p>DevOps & Cloud</p>
+              </div>
+            </div>
+          </div>
 
-
-   </section>
-
+   
    <section id="Témoignage">
     <div class="container text-center ">
       <h1>Témoignage</h1>
@@ -182,7 +230,7 @@ rel="stylesheet">
           </div>
      <div class="col-md-4">
        <div class="card p-3">
-          <img src="IMAGE/image feme.jpeg" width="340"><h6>Daro Diouf</h6><img src="IMAGE/etoile.jpg" width="90">
+          <img src="IMAGE/image feme.jpeg" width="320"><h6>Daro Diouf</h6><img src="IMAGE/etoile.jpg" width="90">
           <p>"Excellent expérience du début à la fin. <br>Communication fluide et résultat de haute qualité."" </p>
         </div>
     </div>
@@ -191,24 +239,9 @@ rel="stylesheet">
    </section>
 <section>
 
-
- 
-
-<!-- JS pour année dynamique -->
-
-<script>
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-</script>
+  <!-- Bootstrap 5 via CDN : script JavaScript --> 
 </section>
-
-
-
-
-
-
- <!-- Bootstrap -->
+   <!-- Bootstrap -->
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -218,15 +251,15 @@ rel="stylesheet">
 
 </head>
 
-<body>
+
 
 <!-- FOOTER -->
 
-<footer class="bg-dark text-light pt-4">
+<footer class="bg-dark text-light pt-4 w-100">
 
-  <div class="container">
+ 
 
-    <div class="row">
+    <div class="row px-4">
 
       <!-- Colonne 1 -->
 
@@ -286,16 +319,19 @@ rel="stylesheet">
         <!-- Réseaux sociaux -->
 
        <a href="https://www.facebook.com" targret="blank">
-                 <img src="IMAGE/facebook.jpg" width="30"> 
+                <img src="IMAGE/facebook.jpg" width="30">
             </a>
-        <a href="https://www.bi-twitter.com" targret="blank">
-                 <img src="IMAGE/twiter.jpg" width="30"> 
+       
+            <a href="https://www.twiter.com" targret="blank">
+                <img src="IMAGE/twiter.jpg" width="30">
             </a>
-        
 
-        <a href="https://www.bi-instagram.com" targret="blank">
-                 <img src="IMAGE/instagramme.jpg" width="30"> 
+
+
+        <a href="https://www.instagramme.com" targret="blank">
+                <img src="IMAGE/instagramme.jpg" width="30">
             </a>
+
 
       </div>
 
@@ -312,132 +348,16 @@ rel="stylesheet">
   </div>
 
 </footer>
- </body>
- </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- <!-- <img src="IMAGE/image Accueil.png" width="1300px"Height="500px">
- <div class="copyright">
-  <section class="text-black text-center">
-    <h1>Trouvez votre développeur</h1>
-<p>Connectez-vous avec des experts pour réaliser vos projets web.</p>
-  </div>
-  </section>
-<section id="services"> 
-<div class=" container py-5 text-center"> 
-  <h2 class="py-5">Nos domaines d'expertise</h2> 
-<div class="row gx-4"> 
-  <div class="col-md-4 card p-3"> 
-<h3>Developpement Web</h3> 
-<p>Sites vitrine, applications web, e-commerce.</p> 
-</div> 
-<div class="col-md-4 card p-3"> 
-<h3>Design Graphique</h3> 
-<p>Identite visuelle, UI/UX, illustrations.</p> 
-</div> 
-<div class="col-md-4 card p-3"> 
-<h3>Marketing Digital</h3> 
-<p>Reseaux sociaux, SEO, campagnes publicitaires.</p> 
-</div> 
-</div> 
-</div> 
-</section> 
-<section id="statistiques"> 
-<div class="container py-5"> 
-<h2 class="text-center">AfriTalent en chiffres</h2> 
-<div class="row gx-4"> 
-<div class="col-md-4 card p-3"><p>1 800+ Freelances</p></div> 
-<div class="col-md-4 card p-3"><p>53 Pays representes</p></div> 
-<div class="col-md-4 card p-3"><p>5 800+ Projets realises</p></div> 
-</div> 
-</div> 
-</section>
-<footer >
-Section Temoignages 
-<section id="temoignages"> 
-  
-  
-<div class="row gx-4"> 
-<h2 class="text-center">Ce que disent nos clients</h2> 
-<blockquote class="blockquote card p-3"> 
-<div class=" container py-5 text-center">  
-<div class="row gx-4"> 
-  <div class="col-md-4 card p-3"> 
-   <img src="IMAGE/image femme.jpg" width="200">
-<p>Grâce à AfriTalent, nous avons trouvé <br>un développeur compétent  adapté à nos besoins. <br>Je recommande vivement</p>
-<footer class="blockquote-footer">Amina Dramé, Directrice Marketing</div></footer>
-</div> 
-<div class="col-md-4 card p-3"> 
- <img src="IMAGE/image homme.jpg" width="200"><p>"J’ai confié mon projet à un freelance sur AfriTalent et le résultat a dépassé mes attentes</p><footer class="blockquote-footer">Mouhamed Sagna, Directeur Marketing</div></footer> 
-</div> 
-
-</div> 
-</div> 
-</div> 
-</section> 
- 
-
-
-</blockquote> 
-</div> 
-</section> 
-</main> 
-Pied de page 
-<footer> 
-<div class="container py-4">
-<p>&copy; 2025 AfriTalent. Tous droits reserves.</p> 
-</div> 
-</footer> -->
-<!-- Bootstrap 5 via CDN : script JavaScript --> 
+ </section>
 <script 
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 ></script> 
 <!-- Votre script JavaScript --> 
 <script src="js/main.js"></script>
+
 </body>
 </html>
+
+
+ 
+
