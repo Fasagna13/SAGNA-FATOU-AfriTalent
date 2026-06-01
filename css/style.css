@@ -929,3 +929,21 @@ footer a:hover {
     font-size: 2.2rem;
   }
 }
+
+
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+body.dark-mode .navbar {
+  background-color: #0f0f1a !important;
+}
+body.dark-mode .card {
+  background-color: #16213e;
+  color: #e0e0e0;
+}
+body.dark-mode footer {
+  background-color: #0f0f1a !important;
+}
