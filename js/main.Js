@@ -1,6 +1,3 @@
-
-
-// On crée le bouton dark mode en JavaScript et on l'ajoute dans la navbar
 const darkModeToggle = document.createElement('button');
 darkModeToggle.id = 'dark-mode-toggle';
 darkModeToggle.textContent = '🌙';
@@ -15,21 +12,21 @@ darkModeToggle.style.cssText = `
   margin-left: 1rem;
 `;
 
-// On l'insère dans la navbar
+
 const navbarNav = document.querySelector('.navbar-nav') || document.querySelector('.navbar');
 if (navbarNav) navbarNav.appendChild(darkModeToggle);
 
-// On vérifie si l'utilisateur avait déjà choisi le dark mode
+
 if (localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark-mode');
   darkModeToggle.textContent = '☀️';
 }
 
-// Au clic sur le bouton, on bascule le mode
+
 darkModeToggle.addEventListener('click', function () {
   document.body.classList.toggle('dark-mode');
 
-  // On sauvegarde le choix dans localStorage
+  e
   if (document.body.classList.contains('dark-mode')) {
     localStorage.setItem('theme', 'dark');
     darkModeToggle.textContent = '☀️';
@@ -39,10 +36,6 @@ darkModeToggle.addEventListener('click', function () {
   }
 });
 
-/* ============================================
-   2. NAVBAR DYNAMIQUE AU SCROLL
-   La navbar change de style quand on scroll vers le bas
-   ============================================ */
 
 const navbar = document.querySelector('.navbar');
 
@@ -58,17 +51,12 @@ window.addEventListener('scroll', function () {
   }
 });
 
-/* ============================================
-   3. BOUTON RETOUR EN HAUT
-   Apparaît quand on scroll vers le bas, remonte en douceur
-   ============================================ */
 
-// On crée le bouton dynamiquement en JavaScript
 const backToTopBtn = document.createElement('button');
 backToTopBtn.textContent = '⬆';
 backToTopBtn.id = 'back-to-top';
 
-// Style du bouton
+
 backToTopBtn.style.cssText = `
   position: fixed;
   bottom: 2rem;
@@ -87,10 +75,10 @@ backToTopBtn.style.cssText = `
   transition: opacity 0.3s ease;
 `;
 
-// On ajoute le bouton à la page
+
 document.body.appendChild(backToTopBtn);
 
-// On affiche ou cache le bouton selon la position du scroll
+
 window.addEventListener('scroll', function () {
   if (window.scrollY > 300) {
     backToTopBtn.style.display = 'block';
@@ -99,7 +87,7 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// Au clic, on remonte en douceur
+
 backToTopBtn.addEventListener('click', function () {
   window.scrollTo({
     top: 0,
@@ -107,10 +95,66 @@ backToTopBtn.addEventListener('click', function () {
   });
 });
 
-/* ============================================
-   ANNÉE DYNAMIQUE DANS LE FOOTER
-   ============================================ */
+
 const yearSpan = document.getElementById('year');
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
+
+
+
+const counters = document.querySelectorAll('.counter');
+
+function animerCompteur(element) {
+  const cible = parseInt(element.getAttribute('data-target'));
+  const duree = 2000;
+  const increment = cible / (duree / 16);
+  let valeurActuelle = 0;
+
+  const timer = setInterval(function () {
+    valeurActuelle += increment;
+    if (valeurActuelle >= cible) {
+      element.textContent = '+' + cible.toLocaleString();
+      clearInterval(timer);
+    } else {
+      element.textContent = '+' + Math.floor(valeurActuelle).toLocaleString();
+    }
+  }, 16);
+}
+
+const observateurCompteur = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      animerCompteur(entry.target);
+      observateurCompteur.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(function (counter) {
+  observateurCompteur.observe(counter);
+});
+
+
+
+const sections = document.querySelectorAll('section');
+
+sections.forEach(function (section) {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(30px)';
+  section.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+});
+
+const observateurSection = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observateurSection.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+sections.forEach(function (section) {
+  observateurSection.observe(section);
+});
