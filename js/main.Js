@@ -1,3 +1,5 @@
+//Commit 6
+
 const darkModeToggle = document.createElement('button');
 darkModeToggle.id = 'dark-mode-toggle';
 darkModeToggle.textContent = '🌙';
@@ -102,7 +104,7 @@ if (yearSpan) {
 }
 
 
-
+//Commit 7
 const counters = document.querySelectorAll('.counter');
 
 function animerCompteur(element) {
@@ -158,3 +160,204 @@ const observateurSection = new IntersectionObserver(function (entries) {
 sections.forEach(function (section) {
   observateurSection.observe(section);
 });
+
+
+//Commit8 filtrage freelance et valisation formulaire Les cartes se filtrent par catégorie sans rechargement
+
+
+const sectionFreelances = document.querySelector('.container.text-center');
+
+if (sectionFreelances) {
+  // Création de la barre de filtres
+  const filtreDiv = document.createElement('div');
+  filtreDiv.style.cssText = 'margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;';
+
+  const categories = ['Tous', 'Développement', 'Design', 'Marketing', 'Rédaction', 'Traduction', 'Mobile'];
+
+  categories.forEach(function (cat) {
+    const btn = document.createElement('button');
+    btn.textContent = cat;
+    btn.setAttribute('data-filtre', cat);
+    btn.style.cssText = `
+      padding: 0.4rem 1rem;
+      border: 2px solid #76bff0eb;
+      background: white;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    `;
+
+    // Au clic sur un bouton de filtre
+    btn.addEventListener('click', function () {
+      // On remet tous les boutons en style normal
+      filtreDiv.querySelectorAll('button').forEach(function (b) {
+        b.style.background = 'white';
+        b.style.color = '#333';
+      });
+
+      // On met en surbrillance le bouton actif
+      btn.style.background = '#76bff0eb';
+      btn.style.color = 'white';
+
+      const filtre = btn.getAttribute('data-filtre');
+
+      // On récupère toutes les cartes freelances
+      const cartes = document.querySelectorAll('.card');
+
+      cartes.forEach(function (carte) {
+        const texte = carte.textContent.toLowerCase();
+
+        if (filtre === 'Tous') {
+          // Afficher toutes les cartes
+          carte.closest('.col-md-4') && (carte.closest('.col-md-4').style.display = 'block');
+        } else {
+          const motsClés = {
+            'Développement': ['développeu', 'backend', 'frontend', 'full stack', 'react', 'node'],
+            'Design': ['design', 'ui', 'ux'],
+            'Marketing': ['marketing', 'community', 'réseaux sociaux'],
+            'Rédaction': ['rédacteur', 'rédaction', 'seo', 'contenu'],
+            'Traduction': ['traducteur', 'traduction', 'anglais'],
+            'Mobile': ['mobile', 'android', 'ios']
+          };
+
+          const mots = motsClés[filtre] || [];
+          const correspond = mots.some(function (mot) {
+            return texte.includes(mot);
+          });
+
+          if (carte.closest('.col-md-4')) {
+            carte.closest('.col-md-4').style.display = correspond ? 'block' : 'none';
+          }
+        }
+      });
+    });
+
+    filtreDiv.appendChild(btn);
+  });
+
+  // On insère la barre de filtres au début de la section
+  sectionFreelances.insertBefore(filtreDiv, sectionFreelances.firstChild);
+}
+
+   //Pour  VALIDATION DU FORMULAIRE DE CONTACT
+ 
+
+const formulaire = document.querySelector('section form');
+
+if (formulaire) {
+
+  // Fonction pour afficher une erreur sous un champ
+  function afficherErreur(input, message) {
+    // On supprime l'erreur précédente si elle existe
+    const erreurExistante = input.parentNode.querySelector('.erreur-msg');
+    if (erreurExistante) erreurExistante.remove();
+
+    // On crée le message d'erreur
+    const erreur = document.createElement('div');
+    erreur.className = 'erreur-msg';
+    erreur.textContent = message;
+    erreur.style.cssText = 'color: red; font-size: 0.85rem; margin-top: 4px;';
+
+    // On met la bordure rouge sur le champ
+    input.style.borderColor = 'red';
+
+    // On insère le message après le champ
+    input.parentNode.appendChild(erreur);
+  }
+
+  // Fonction pour marquer un champ comme valide
+  function afficherSucces(input) {
+    const erreurExistante = input.parentNode.querySelector('.erreur-msg');
+    if (erreurExistante) erreurExistante.remove();
+    input.style.borderColor = 'green';
+  }
+
+  // Validation au clic sur le bouton Envoyer
+  const boutonEnvoyer = formulaire.querySelector('button');
+
+  boutonEnvoyer.addEventListener('click', function (e) {
+    e.preventDefault(); // On empêche l'envoi réel du formulaire
+
+    let valide = true;
+
+    // Récupération des champs
+    const nom = formulaire.querySelectorAll('input[type="text"]')[0];
+    const prenom = formulaire.querySelectorAll('input[type="text"]')[1];
+    const email = formulaire.querySelector('input[type="email"]');
+    const sujet = formulaire.querySelector('select');
+    const message = formulaire.querySelector('textarea');
+
+    // Validation Nom
+    if (!nom.value.trim()) {
+      afficherErreur(nom, 'Le nom est obligatoire.');
+      valide = false;
+    } else {
+      afficherSucces(nom);
+    }
+
+    // Validation Prénom
+    if (!prenom.value.trim()) {
+      afficherErreur(prenom, 'Le prénom est obligatoire.');
+      valide = false;
+    } else {
+      afficherSucces(prenom);
+    }
+
+    // Validation Email avec regex
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.value.trim()) {
+      afficherErreur(email, 'L\'email est obligatoire.');
+      valide = false;
+    } else if (!regexEmail.test(email.value)) {
+      afficherErreur(email, 'Format d\'email invalide.');
+      valide = false;
+    } else {
+      afficherSucces(email);
+    }
+
+    // Validation Sujet
+    if (sujet.value === '-- Choisir un sujet --') {
+      afficherErreur(sujet, 'Veuillez choisir un sujet.');
+      valide = false;
+    } else {
+      afficherSucces(sujet);
+    }
+
+    // Validation Message (minimum 20 caractères)
+    if (!message.value.trim()) {
+      afficherErreur(message, 'Le message est obligatoire.');
+      valide = false;
+    } else if (message.value.trim().length < 20) {
+      afficherErreur(message, 'Le message doit contenir au moins 20 caractères.');
+      valide = false;
+    } else {
+      afficherSucces(message);
+    }
+
+    // Si tout est valide : message de succès
+    if (valide) {
+      // On supprime un message de succès précédent
+      const succesExistant = formulaire.querySelector('.succes-msg');
+      if (succesExistant) succesExistant.remove();
+
+      const succes = document.createElement('div');
+      succes.className = 'succes-msg';
+      succes.textContent = '✅ Votre message a bien été envoyé ! Nous vous répondrons sous 24h.';
+      succes.style.cssText = `
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 1rem;
+        font-weight: 600;
+      `;
+
+      formulaire.appendChild(succes);
+
+      // On vide le formulaire après succès
+      formulaire.reset();
+    }
+  });
+}
