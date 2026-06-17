@@ -1,11 +1,11 @@
-/* ============================================
+/* 
    COMMIT 6 — Dark Mode, Navbar dynamique, Bouton retour en haut
-   ============================================ */
+   */
 
-/* ============================================
+/* 
    1. DARK MODE / LIGHT MODE
    Sauvegardé dans localStorage pour persister entre les pages
-   ============================================ */
+   */
 
 // On crée le bouton dark mode en JavaScript et on l'ajoute dans la navbar
 const darkModeToggle = document.createElement('button');
@@ -46,10 +46,9 @@ darkModeToggle.addEventListener('click', function () {
   }
 });
 
-/* ============================================
+/*
    2. NAVBAR DYNAMIQUE AU SCROLL
-   La navbar change de style quand on scroll vers le bas
-   ============================================ */
+   La navbar change de style quand on scroll vers le bas*/
 
 const navbar = document.querySelector('.navbar');
 
@@ -65,10 +64,10 @@ window.addEventListener('scroll', function () {
   }
 });
 
-/* ============================================
+/* 
    3. BOUTON RETOUR EN HAUT
    Apparaît quand on scroll vers le bas, remonte en douceur
-   ============================================ */
+   */
 
 // On crée le bouton dynamiquement en JavaScript
 const backToTopBtn = document.createElement('button');
@@ -114,10 +113,10 @@ backToTopBtn.addEventListener('click', function () {
   });
 });
 
-/* ============================================
+/* 
    ANNÉE DYNAMIQUE DANS LE FOOTER
    Affiche l'année courante automatiquement
-   ============================================ */
+ */
 const yearSpan = document.getElementById('year');
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
